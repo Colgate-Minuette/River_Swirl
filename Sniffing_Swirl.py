@@ -1,5 +1,6 @@
 import scapy.all as scapy
 import argparse
+import csv
 
 def get_arguments():
     parser = argparse.ArgumentParser()
@@ -28,3 +29,8 @@ def print_result(scan_list):
 options = get_arguments()
 result_list = scan(options.target)
 print_result(result_list)
+
+with open('savedcsv.csv', 'w', newline = '') as f :
+        scribe = csv.writer(f)
+
+        scribe.writerow(['a', 'b', 'c'])
